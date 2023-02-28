@@ -1,5 +1,5 @@
 class EventspacesController < ApplicationController
   def index
-    @eventspaces = Eventspaces.all
+    @eventspaces = Eventspace.all
   end
 end
