@@ -30,6 +30,10 @@ html{
   color: white;
 }
 
+.main-container{
+
+}
+
 .card-grid{
   display: grid;
   grid-template-columns: repeat(1, 2fr);
@@ -42,15 +46,15 @@ html{
 
 @media(min-width: 540px){
   .card-grid{
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 2fr);
   }
 }
 
-@media(min-width: 960px){
-  .card-grid{
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+// @media(min-width: 960px){
+//   .card-grid{
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+// }
 
 .card{
   list-style: none;
@@ -63,7 +67,7 @@ html{
 .card:before{
   content: '';
   display: block;
-  padding-bottom: 150%;
+  padding-bottom: 100%;
   width: 100%;
 }
 

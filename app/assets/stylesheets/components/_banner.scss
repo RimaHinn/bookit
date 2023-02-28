@@ -1,4 +1,3 @@
-
 .banner {
   background-size: cover;
   background-position: center;
@@ -11,9 +10,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
-  margin: 0px auto;
-  width: 80%;
-  text-align: center;
 }
 
 .banner p {
@@ -21,7 +17,12 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  margin: 0px auto;
-  width: 80%;
-  text-align: center;
+}
+
+.banner button {
+  background-color: #7E77CA;
+  font-size: 16px;
+  padding: 16px 32px;
+  color:white;
+  border-radius: 50px;
 }

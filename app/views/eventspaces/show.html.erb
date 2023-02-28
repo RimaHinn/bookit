@@ -1,4 +1,96 @@
-<h1>TEST</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+   <button type="button" class="button_back"> <%= link_to "←", eventspaces_path %> </button>
+    <h1 style="text-align:center; margin-top:20px;"><strong><%= @eventspace.name %></strong></h1>
+   <h2 style="text-align:center;"> <%= @eventspace.address %></h2>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica", sans-serif;
+      }
+      img {
+        max-width: 100%;
+      }
+      .slider-container {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .menu {
+        position: absolute;
+        left: 0;
+        z-index: 900;
+        width: 100%;
+        bottom: 0;
+      }
+      .menu label {
+        cursor: pointer;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border-radius: 50px;
+        margin: 0 0.2em 1em;
+      }
+      .menu label:hover,
+      .menu label:focus {
+        background: #1c87c9;
+      }
+      .slide {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        z-index: 10;
+        padding: 8em 1em 0;
+        background-size: cover;
+        background-position: 50% 50%;
+        transition: left 0s 0.75s;
+      }
+      [id^="slide"]:checked + .slide {
+        left: 0;
+        z-index: 100;
+        transition: left 0.65s ease-out;
+      }
+      .slide-1 {
+        background-image: url("https://innovativehire.co.uk/wp-content/uploads/2018/06/Outdoor-Event-Bar-Hire.jpg");
+      }
+      .slide-2 {
+        background-image: url("https://www.londonsummereventshow.com/app/uploads/2018/11/national-gallery-outdoor-space-events.jpg");
+      }
+      .slide-3 {
+        background-image: url("https://i.pinimg.com/originals/a4/79/78/a47978942adc72e6b0b0359ecf8a98e5.png");
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider-container">
+      <div class="menu">
+        <label for="slide-dot-1"></label>
+        <label for="slide-dot-2"></label>
+        <label for="slide-dot-3"></label>
+      </div>
+      <input id="slide-dot-1" type="radio" name="slides" checked>
+      <div class="slide slide-1"></div>
+      <input id="slide-dot-2" type="radio" name="slides">
+      <div class="slide slide-2"></div>
+      <input id="slide-dot-3" type="radio" name="slides">
+      <div class="slide slide-3"></div>
+    </div>
+    
+    
+    <%# Form to create a booking - uncomment to unleash! %>
+    <%# render "booking/form", eventspace: @eventspace, booking: @booking %>
 
-<%# Form to create a booking %>
-<%= render "booking/form", eventspace: @eventspace, booking: @booking %>
+  </body>
+</html>
