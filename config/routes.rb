@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :eventspaces do
     resources :bookings, only: [:new, :create]
   end
+  
     # displaying a form to create a new booking (GET /bookings/new),
     # actually creating a new booking based on the form data (POST /bookings).
 
