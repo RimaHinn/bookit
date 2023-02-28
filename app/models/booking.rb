@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
-  belongs_to :eventspaces
+  belongs_to :eventspace
 
   enum :status, { pending: 0, accepted: 1, declined: 2 },  default: :pending # when a booking is created, default value is pending
   # allows us to do Booking.pending and all Bookings with pending status
