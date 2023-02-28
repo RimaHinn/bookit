@@ -1,14 +1,26 @@
 class EventspacesController < ApplicationController
-  before_action :set_event_space, only: [:show, :edit, :destroy]
+  before_action :set_event_space
 
   def index
     @eventspaces = Eventspace.all
-
-
   end
 
   def show
     # @event_space = Eventspace.find(params[:id])
+  end
+
+  def new
+    @event_space = Eventspace.new
+  end
+
+  def create
+    @event_space = Eventspace.new(event_space_params)
+    @event_space.user = current_user
+    if @event_space.save
+      redirect_to event_space_path(@vent_space)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -34,6 +46,6 @@ class EventspacesController < ApplicationController
   end
 
   def event_space_params
-    params.require(:event_space).permit(:name, :address, :user_id)
+    params.require(:event_space).permit(:name, :address)
   end
 end
