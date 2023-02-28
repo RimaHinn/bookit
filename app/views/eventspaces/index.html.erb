@@ -1,0 +1,18 @@
+<%#
+<ul class="cards"><% @eventspaces.each do |e| %>
+  <%# <li class="card-category" style= "background-image: url(https://blog.printsome.com/wp-content/uploads/abcs-restaurants-hero-image.jpg)"><%= link_to "#{e.name}", eventspace_path(e) %></li>
+  <%# <% end </ul> %>
+
+<ul class="cards"><% @eventspaces.each do |e| %>
+  <div class="card-trip">
+  <img src="https://blog.printsome.com/wp-content/uploads/abcs-restaurants-hero-image.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= link_to "#{e.name}", eventspace_path(e) %></li></h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+  <% end %> </ul>
