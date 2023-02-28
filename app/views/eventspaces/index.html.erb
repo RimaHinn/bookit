@@ -1,0 +1,5 @@
+<h1 style="text-align:center; text-style:bold;">All Eventspaces</h1>
+
+<ul class="cards"><% @eventspaces.each do |e| %>
+  <li class="card-category" style= "background-image: url(https://blog.printsome.com/wp-content/uploads/abcs-restaurants-hero-image.jpg)"><%= link_to "#{e.name}", eventspaces_path(e) %></li>
+  <% end %> </ul>
