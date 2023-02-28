@@ -18,7 +18,7 @@ html{
   height: 100%;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  background-color: white;
+  color: white;
 }
 
 .hero-section{
@@ -27,6 +27,7 @@ html{
   min-height: 100%;
   justify-content: center;
   margin: 0px 32px 32px 32px;
+  color: white;
 }
 
 .card-grid{
@@ -36,6 +37,7 @@ html{
   grid-row-gap: var(--spacing-l);
   max-width: var(--width-container);
   width: 100%;
+  color: white;
 }
 
 @media(min-width: 540px){
@@ -54,6 +56,8 @@ html{
   list-style: none;
   position: relative;
   border: none;
+  background-color: white;
+  border-radius: 20px;
 }
 
 .card:before{
@@ -76,6 +80,7 @@ html{
   transform-origin: center;
   transform: scale(1) translateZ(0);
   transition: filter 200ms linear, transform 200ms linear;
+  color: white;
 }
 
 .card:hover .card__background{
@@ -91,23 +96,22 @@ html{
   padding: var(--spacing-l);
   position: absolute;
   top: 0;
-  color:white;
 }
 
 
 .card__category{
-  color: var(--text-light);
+  color: white;
   font-size: 0.9rem;
   margin-bottom: var(--spacing-s);
   text-transform: uppercase;
 }
 
 .card__heading{
-  color: var(--text-lighter);
   font-size: 1.9rem;
   text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
   line-height: 1.4;
   word-spacing: 100vw;
   transform: scale(1) translateZ(0);
   transition: filter 200ms linear, transform 200ms linear;
+  color: white;
 }
