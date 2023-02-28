@@ -1,8 +1,4 @@
 <h1>This is the page where you can make a new booking. </h1>
 
 <%# # simple form is easier and already has bootstramp embededd. %>
-<%= simple_form_for[@eventspace, @booking] do |f| %>
-  <%= f.input :starts_at %>
-  <%= f.input :ends_at %>
-  <%= f.submit %>
-<% end %>
+<%= render "form", eventspace: @eventspace, booking: @booking %>
