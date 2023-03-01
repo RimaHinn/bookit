@@ -87,6 +87,10 @@
       <div class="slide slide-3"></div>
     </div>
 
+    <h3><%= @eventspace.description %>
+    <h3><%= @eventspace.price %>
+
+
   <div class="form_book">
     <%# Form to create a booking - uncomment to unleash! %>
     <%= render "bookings/form", eventspace:@eventspace, booking:@booking %>
