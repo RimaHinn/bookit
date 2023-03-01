@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :eventspaces do
     resources :bookings, only: [:new, :create]
   end
-  
+
     # displaying a form to create a new booking (GET /bookings/new),
     # actually creating a new booking based on the form data (POST /bookings).
 
@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   # get 'eventspaces/:eventspaces_id/bookings/new', to: 'bookings#new'
   # post 'eventspaces/:eventspaces_id/bookings', to: 'bookings#create'
 
+
+  # Booking Confirmation Pages
+  get 'bookings/:id/confirmation', to: "bookings#confirmation", as: :booking_confirmation # as: it's an alias for the confirmation - see in rails routes
+  #/bookings/:id/confirmation	GET	Bookings	confirmation
 end

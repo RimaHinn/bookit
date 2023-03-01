@@ -10,12 +10,17 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+
+
+<%# "My Eventspaces" linking to /my_eventspaces %>
+    <%# # >>> remove home (which is linked in the logo already) + remove messages (not a real feature) %>
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Add Event Space", new_eventspace_path, class: "nav-link" %>
           </li>
+          <%# "My Bookings" linking to /my_bookings %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "My Bookings", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
