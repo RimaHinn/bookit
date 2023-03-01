@@ -3,9 +3,7 @@
 <h1>all your bookings, <%= current_user.email%></h1>
 
   <ul>
-<% @user_bookings.each do |booking| %>
-  <li>
-    <%= booking.email %>
-  </li>
-<% end %>
+    <% @user_bookings.each do |booking| %>
+      <li><%= booking.user.email %></li>
+    <% end %>
   </ul>
