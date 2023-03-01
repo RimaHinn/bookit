@@ -1,0 +1,11 @@
+<%# This is the page you get when you open /my_bookings - Bookings#index %>
+
+<h1>all your bookings, <%= current_user.email%></h1>
+
+  <ul>
+<% @user_bookings.each do |booking| %>
+  <li>
+    <%= booking.email %>
+  </li>
+<% end %>
+  </ul>
