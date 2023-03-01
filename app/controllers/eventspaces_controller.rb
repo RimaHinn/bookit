@@ -41,6 +41,10 @@ class EventspacesController < ApplicationController
     redirect_to event_space_path, status: :see_other
   end
 
+  def select
+    @user_eventspaces = Eventspace.where(user:current_user)
+  end
+
   private
 
   def set_event_space
