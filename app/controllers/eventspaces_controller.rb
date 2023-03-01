@@ -46,6 +46,6 @@ class EventspacesController < ApplicationController
   end
 
   def event_space_params
-    params.require(:eventspace).permit(:name, :address)
+    params.require(:eventspace).permit(:name, :address, :price, :description)
   end
 end
