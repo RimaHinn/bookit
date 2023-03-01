@@ -7,6 +7,7 @@ class EventspacesController < ApplicationController
 
   def show
     # @event_space = Eventspace.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
