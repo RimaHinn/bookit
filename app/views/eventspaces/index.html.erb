@@ -5,7 +5,7 @@
 
 <ul class="cards"><% @eventspaces.each do |e| %>
   <div class="card-trip">
-  <img src="https://blog.printsome.com/wp-content/uploads/abcs-restaurants-hero-image.jpg" />
+  <img src=<%= "https://blog.printsome.com/wp-content/uploads/abcs-restaurants-hero-image.jpg"%> />
   <div class="card-trip-infos">
     <div>
       <h2><%= link_to "#{e.name}", eventspace_path(e) %></li></h2>
