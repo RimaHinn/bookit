@@ -23,9 +23,15 @@ class BookingsController < ApplicationController
     end
   end
 
+
   # method to generate confirmation page
   def confirmation
     @booking = Booking.find(params[:id])
+  end
+
+  def select
+    @user_bookings = Booking.where(user:current_user)
+
   end
 
   private
