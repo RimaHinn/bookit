@@ -47,10 +47,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_130109) do
     t.datetime "ends_at"
     t.integer "status"
     t.bigint "user_id", null: false
-    t.bigint "eventspace_id", null: false
+    t.bigint "eventspaces_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["eventspace_id"], name: "index_bookings_on_eventspace_id"
+    t.index ["eventspaces_id"], name: "index_bookings_on_eventspaces_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -79,7 +79,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_130109) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+<<<<<<< HEAD
   add_foreign_key "bookings", "eventspaces"
+=======
+  add_foreign_key "bookings", "eventspaces", column: "eventspaces_id"
+>>>>>>> ffe3ca4872d91021a591795b6dae00e76a30155d
   add_foreign_key "bookings", "users"
   add_foreign_key "eventspaces", "users"
 end
