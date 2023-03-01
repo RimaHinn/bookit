@@ -7,6 +7,7 @@ class EventspacesController < ApplicationController
 
   def show
     # @event_space = Eventspace.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -38,6 +39,10 @@ class EventspacesController < ApplicationController
     # @list = List.find(params[:id])
     @eventspace.destroy
     redirect_to event_space_path, status: :see_other
+  end
+
+  def select
+    @user_eventspaces = Eventspace.where(user:current_user)
   end
 
   private
