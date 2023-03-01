@@ -16,7 +16,8 @@ class BookingsController < ApplicationController
     if @booking.save
       # 4. user will be redirected to dashboard page.
       # In a more complex app, he'd get here an email confirmation + confirmation page.
-      redirect_to '/dashboard'
+      redirect_to eventspaces_path # you see the path and the prefix through: rails routes | grep booking
+      # eventspace GET    /eventspaces/:id ---- this would be redirect_to eventspaces_path(@id) sendo que o @id é o que está nested.
     else
       render :new
     end

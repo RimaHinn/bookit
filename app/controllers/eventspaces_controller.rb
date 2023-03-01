@@ -29,6 +29,7 @@ class EventspacesController < ApplicationController
 
   def update
     # @event_space = Eventspace.find(params[:id])
+
     @eventspace = Eventspace.update(event_space_params)
     redirect_to eventspace_path(@eventspace)
   end
