@@ -5,7 +5,11 @@
 
 <ul class="cards"><% @eventspaces.each do |e| %>
   <div class="card-trip">
+
+  <%= cl_image_tag e.photo.key %>
+
   <img src=<%= "https://blog.printsome.com/wp-content/uploads/abcs-restaurants-hero-image.jpg"%> />
+
   <div class="card-trip-infos">
     <div>
       <h2><%= link_to "#{e.name}", eventspace_path(e) %></li></h2>
