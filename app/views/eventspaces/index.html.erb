@@ -1,4 +1,22 @@
 
+<ul class="cards">
+
+<% @eventspaces.each do |e| %>
+
+  <%= link_to eventspace_path(e) do %>
+    <div class="card-trip">
+      <%= cl_image_tag e.photos.first.key %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= e.name %></li></h2>
+          <p><%= "#{e.description}"%></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= "$#{e.price}"%></h2>
+      </div>
+    </div>
+  <% end %>
+
+
 <ul class="cards"><% @eventspaces.each do |eventspace| %>
 
   <div class="card-trip">
@@ -24,5 +42,6 @@
   <% end %> </ul>
   </div>
 </div>
+
 <% end %>
 </ul>
