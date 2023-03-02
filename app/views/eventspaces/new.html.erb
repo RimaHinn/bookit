@@ -1,10 +1,14 @@
-
-  <h3>Add a new event space</h3>
+<div class="container">
+  <!-- Content here -->
+    <h3>Add a new event space</h3>
     <%= simple_form_for @eventspace do |f| %>
         <%= f.input :name %>
         <%= f.input :address %>
         <%= f.input :price %>
         <%= f.input :description %>
         <%= f.input :photos, as: :file, input_html: { multiple: true }%>
-        <%= f.submit %>
+        <%= f.submit "Create my eventspace",:input_html =>{:class => "button"} %>
     <% end %>
+</div>
+
+<%# need to add styling to our button %>
