@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+
+    <p class="alert alert-primary"><%= notice %><%= alert %></p>
+    
+
     <title>Bookit</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -21,6 +27,16 @@
       <%# <--------------------------- FOOTER ------------------------------------> %>
       <%= render "shared/footer" %>
     </div>
+
+  <%# <--------------------------- NAVBAR ------------------------------------> %>
+    <%= render "shared/navbar" %>
+
+  <%# <--------------------------- FOOTER ------------------------------------> %>
+
+
+    <%= yield %>
+  <%= render "shared/footer" %>
+
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

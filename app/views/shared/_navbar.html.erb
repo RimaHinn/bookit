@@ -3,15 +3,16 @@
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "logo_01.png"%>
     <% end %>
-    <div style= "width: 640px;">
+
+<div class= "search_bar">
     <%= form_with url: eventspaces_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an eventspace..."
-  %>
-  <%= submit_tag "Search", class: "btn btn-light"%>
-  <% end %></div>
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an eventspace..."%>
+      <%= submit_tag "Submit", class: "btn btn-light"%>
+    <% end %>
+</div>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +31,7 @@
             <%= link_to "My Bookings", my_bookings_path, class: "nav-link" %>
           </li>
           <%# "My Eventspaces" linking to /my_eventspaces %>
-          <li class="nav-item">
+          <li class="nav-item" style="color:black">
             <%= link_to "My Eventspaces", my_eventspaces_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
