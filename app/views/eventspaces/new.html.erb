@@ -1,6 +1,6 @@
 <div class="container">
   <!-- Content here -->
-    <h3>Add a new event space</h3>
+    <h1>Add a new event space</h1>
     <%= simple_form_for @eventspace do |f| %>
         <%= f.input :name %>
         <%= f.input :address %>
@@ -9,4 +9,8 @@
         <%= f.input :photos, as: :file, input_html: { multiple: true }%>
         <%= f.submit "Create my eventspace", :class => "button" %>
     <% end %>
+</div>
+
+<div class="container">
+  <h1>Terms & Conditions</h1>
 </div>
