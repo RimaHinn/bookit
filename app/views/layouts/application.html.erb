@@ -11,16 +11,18 @@
   </head>
 
   <body>
+    <div class="d-flex flex-column" style="height: 100vh">
+      <%# <--------------------------- NAVBAR ------------------------------------> %>
+      <%= render "shared/navbar" %>
+      <%# <------------------------- PAGE CONTENT ----------------------------------> %>
+      <div class="flex-grow-1">
+        <%= yield %>
+      </div>
+      <%# <--------------------------- FOOTER ------------------------------------> %>
+      <%= render "shared/footer" %>
+    </div>
 
-  <%# <--------------------------- NAVBAR ------------------------------------> %>
-    <%= render "shared/navbar" %>
-
-  <%# <--------------------------- FOOTER ------------------------------------> %>
-
-
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render "shared/footer" %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   </body>
 </html>
