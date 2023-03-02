@@ -4,15 +4,15 @@
   <%# <% end </ul> %>
 
 <ul class="cards"><% @eventspaces.each do |e| %>
-  <div class="card-trip">
-  <img src=<%= "https://blog.printsome.com/wp-content/uploads/abcs-restaurants-hero-image.jpg"%> />
+<div class="card-trip">
+  <%= cl_image_tag e.photos.first.key %>
   <div class="card-trip-infos">
     <div>
       <h2><%= link_to "#{e.name}", eventspace_path(e) %></li></h2>
       <p><%= "#{e.description}"%></p>
     </div>
     <h2 class="card-trip-pricing"><%= "$#{e.price}"%></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+   
   </div>
 </div>
   <% end %> </ul>
