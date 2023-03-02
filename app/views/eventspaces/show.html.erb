@@ -12,12 +12,12 @@
       <%= cl_image_tag @eventspace.photos.first.key, width: 500, crop: :fill, class: "event-image" %>
       <div class="events-cards">
         <% @eventspace.photos[1..-1].each do |photo| %>
-          <%= cl_image_tag photo.key, style: "height:100%; width:100%", class: "event-image" %>
+          <%= cl_image_tag photo.key, style: "width:100%; height:50%;", class: "event-image" %>
         <% end %>
       </div>
     </div>
   <% else %>
-    <%= image_tag "beachimage.jpeg" %>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
   <% end %>
 
 <div class="form_book">
