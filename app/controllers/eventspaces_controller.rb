@@ -2,7 +2,11 @@ class EventspacesController < ApplicationController
   before_action :set_event_space, only: %i[show edit destroy]
 
   def index
-    @eventspaces = Eventspace.all
+    if params[:query].present?
+      @eventspaces = Eventspace.where("name ILIKE :query OR address ILIKE :query OR description ILIKE :query", query: "%#{params[:query]}%")
+    else
+      @eventspaces = Eventspace.all
+    end
   end
 
   def show

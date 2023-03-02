@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem "pg_search"
+
+gem "dotenv-rails", groups: [:development, :test]
+
 gem "devise"
 
 gem "dotenv-rails", groups: [:development, :test]

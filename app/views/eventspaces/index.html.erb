@@ -16,5 +16,32 @@
     </div>
   <% end %>
 
+
+<ul class="cards"><% @eventspaces.each do |eventspace| %>
+
+  <div class="card-trip">
+
+<div class="card-trip">
+
+  <% if eventspace.photos.attached? %>
+  <%= cl_image_tag eventspace.photos.first.key %>
+  <% else %>
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+  <% end %>
+
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= link_to "#{eventspace.name}", eventspace_path(eventspace) %></li></h2>
+      <p><%= "#{eventspace.description}"%></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= "$#{eventspace.price}"%></h2>
+
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+ </div>
+  <% end %> </ul>
+  </div>
+</div>
+
 <% end %>
 </ul>
