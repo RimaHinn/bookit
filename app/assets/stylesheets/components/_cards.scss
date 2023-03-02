@@ -80,3 +80,14 @@ a {
 .card-trip-pricing {
   height: 40px;
 }
+
+.events-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  padding-left: 5px;
+}
+
+.event-image {
+  object-fit: cover;
+}
