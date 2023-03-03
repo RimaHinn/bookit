@@ -1,16 +1,84 @@
-<div class="container">
-  <!-- Content here -->
-    <h1>Add a new event space</h1>
-    <%= simple_form_for @eventspace do |f| %>
+<div class="container justify-content-center mx-auto" style="width: 1024px;">
+  <div class="row justify-content-between">
+  <%# gap-between-box class  %>
+    <div class="col-5" style="position: sticky; top: 30px;">
+      <!-- Form Content here -->
+      <h1>Add a new event space</h1>
+      <%= simple_form_for @eventspace do |f| %>
         <%= f.input :name %>
         <%= f.input :address %>
         <%= f.input :price %>
         <%= f.input :description %>
         <%= f.input :photos, as: :file, input_html: { multiple: true }%>
         <%= f.submit "Create my eventspace", :class => "button" %>
-    <% end %>
-</div>
+      <% end %>
+    </div>
 
-<div class="container">
-  <h1>Terms & Conditions</h1>
+    <%# need to make the form sticky %>
+
+    <%# ------------------- features -------------------%>
+    <div class="col-6">
+      <%# Containers %>
+      <div class="container" style="margin-bottom: 50px;">
+        <h1>What can we offer?</h1>
+        <div class="row">
+          <div class="feature">
+            <i class="fa-solid fa-shield-halved mb-3" style="font-size: 20px;"></i>
+            <h3>Best of the bunch</h3>
+            <p>We only list first-class venues so our clients know they’re in safe and trusted hands.</p>
+          </div>
+          <div class="feature">
+            <i class="fa-regular fa-credit-card mb-3" style="font-size: 20px;"></i>
+            <h3>When you win, we win</h3>
+            <p>Listings are completely free. We take a 15% commission on confirmed bookings only.</p>
+          </div>
+          <div class="feature">
+            <i class="fa-regular fa-clock mb-3" style="font-size: 20px;"></i>
+            <h3>No time-wasted</h3>
+            <p>We know you're busy and we will only knock on your door with suitable requests.</p>
+          </div>
+        </div>
+      </div>
+      <%# <%# End of Features %>
+
+      <h1>Terms & Conditions</h1>
+      <%# ------------------tabs---------------------- %>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="color: #7E77CA;">Portugal</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="color: #7E77CA;">Spain</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" style="color: #7E77CA;">France</button>
+        </li>
+      </ul>
+      <div class="tab-content my-4" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <p>In Portugal, here's more about renting out your eventspace:</p>
+          <ul>
+            <li>We’ve partnered with apartment buildings across the US that let you rent a place to live and Airbnb it part-time. Explore available apartments and find out what you can earn.</li>
+            <li>Airbnb guests are interested in all kinds of places. We have listings for tiny homes, cabins, treehouses, and more. Even a spare room can be a great place to stay.</li>
+            <li>Getting the basics down goes a long way. Keep your place clean, respond to guests promptly, and provide necessary amenities, like fresh towels.</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <p>In Spain, you can list out your eventspace if:</p>
+          <ul>
+            <li>You make paella for your guests. Explore available restaurants and ask them to teach you how to cook it, if needed.</li>
+            <li>In Spain, it's common to have listings for tiny homes, cabins, treehouses, and more. Make sure your eventspace is in one of these categories.</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <p>In France, you can list out your eventspace if:</p>
+          <ul>
+            <li>You make croissants for your guests. Explore available cafés and ask them to teach you how to cook it, if needed.</li>
+            <li>In France, it's common to have listings for tiny homes, cabins, treehouses, and more. Make sure your eventspace is in one of these categories.</li>
+          </ul>
+        </div>
+      </div>
+      <%# ------------------end of tabs---------------------- %>
+    </div>
+  </div>
 </div>
