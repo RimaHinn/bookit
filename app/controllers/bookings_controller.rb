@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
     @eventspace = Eventspace.find(params[:eventspace_id])
     @booking.eventspace = @eventspace
     @booking.status = "pending"
+
     # 2. save
     if @booking.save
       # 4. user will be redirected to dashboard page.
@@ -29,7 +30,7 @@ class BookingsController < ApplicationController
   end
 
   def select
-    @user_bookings = Booking.where(user:current_user)
+    @user_bookings = Booking.where(user: current_user)
 
   end
 

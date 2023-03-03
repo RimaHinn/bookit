@@ -1,13 +1,21 @@
 <%# This is the page you get when you open /my_bookings - Bookings#index %>
 
-<h1 class="event-title">Trips</h1>
-<h3 class="event-subtitle">Where you’ve been</h3>
-  <ul>
-    <% @user_bookings.each do |booking| %>
-      <li><%= booking.user.email %></li>
-      <li><%= booking.user.email %></li>
-      <li><%= booking.user.email %></li>
-    <% end %>
-  </ul>
-
+<div class="main-cards">
+  <h1 class="booking-title">Trips</h1>
+   <h3 class="booking-subtitle">Where you’ve been</h3>
+<div class="card-container">
+  <% @user_bookings.each do |booking| %>
+    <div class="card-booking rounded-01 d-flex bg-white m-auto mb-4">
+      <div class="card-booking-img" style="background-image: url('<%= booking.eventspace.photos.first.url if booking.eventspace.photos.attached? %>')">
+      </div>
+        <div class="content-booking-card mt-3">
+          <ul class="booking-list">
+            <li><%= booking.eventspace.name %></li>
+            <li><%= booking.eventspace.address %></li>
+            <li><%= booking.starts_at.to_date %> - <%= booking.ends_at.to_date %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
