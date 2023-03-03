@@ -1,5 +1,18 @@
-<h1>all your eventspaces, <%= current_user.email%></h1>
-<% @user_eventspaces.each do |eventspace| %>
-  <%= eventspace.name %>
-  <%= eventspace.address %>
-<% end %>
+
+<div class="main-cards">
+  <h1 class="event-title">My Eventspaces</h1>
+  <% @user_eventspaces.each do |eventspace| %>
+    <div class="card-event rounded-01 d-flex bg-white m-auto mb-4">
+      <div class="card-event-img" style="background-image: url(<%= eventspace.photos.first.url if eventspace.photos.attached? %>)">
+      </div>
+      <div class="content-card">
+        <ul>
+          <li><label class="font-weight-bold">Name:</label><%= eventspace.name %></li>
+          <li><label class="font-weight-bold">Address:</label><%= eventspace.address %></li>
+          <li><label class="font-weight-bold">Description:</label><%= eventspace.description %></li>
+          <li><label class="font-weight-bold">Email:</label> <%= current_user.email %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>

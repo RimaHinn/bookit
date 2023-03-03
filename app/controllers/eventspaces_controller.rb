@@ -46,7 +46,7 @@ class EventspacesController < ApplicationController
   end
 
   def select
-    @user_eventspaces = Eventspace.where(user:current_user)
+    @user_eventspaces = Eventspace.where(user: current_user)
   end
 
   private
