@@ -1,20 +1,25 @@
 
-<ul class="cards"><% @eventspaces.each do |eventspace| %>
+<ul class="cards">
 
-<div class="card-trip">
-  <% if eventspace.photos.attached? %>
-  <%= cl_image_tag eventspace.photos.first.key %>
-  <% else %>
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+<% @eventspaces.each do |e| %>
+
+  <%= link_to eventspace_path(e) do %>
+    <div class="card-trip">
+      <% if e.photos.attached? %>
+        <%= cl_image_tag e.photos.first.key %>
+      <% else %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+      <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= e.name %></h2>
+            <p><%= e.name %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= "$#{e.price}"%></h2>
+        </div>
+    </div>
   <% end %>
 
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= link_to "#{eventspace.name}", eventspace_path(eventspace) %></li></h2>
-      <p><%= "#{eventspace.description}"%></p>
-    </div>
-    <h2 class="card-trip-pricing"><%= "$#{eventspace.price}"%></h2>
-  </div>
-</div>
 <% end %>
+
 </ul>
