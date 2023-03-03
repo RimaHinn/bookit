@@ -1,21 +1,20 @@
 <%# This is the page you get when you open /my_bookings - Bookings#index %>
-
 <div class="main-cards">
-  <h1 class="booking-title">Trips</h1>
-   <h3 class="booking-subtitle">Where you’ve been</h3>
-<div class="card-container">
+  <h1 class="booking-title text-center m-5">My Bookings</h1>
   <% @user_bookings.each do |booking| %>
-    <div class="card-booking rounded-01 d-flex bg-white m-auto mb-4">
-      <div class="card-booking-img" style="background-image: url('<%= booking.eventspace.photos.first.url if booking.eventspace.photos.attached? %>')">
-      </div>
-        <div class="content-booking-card mt-3">
-          <ul class="booking-list">
-            <li><%= booking.eventspace.name %></li>
-            <li><%= booking.eventspace.address %></li>
-            <li><%= booking.starts_at.to_date %> - <%= booking.ends_at.to_date %></li>
-          </ul>
-        </div>
+    <div class="card-event rounded-01 d-flex bg-white m-auto mb-4">
+      <div class="card-event-img" style="background-image: url('<%= cl_image_path booking.eventspace.photos.first.key if booking.eventspace.photos.attached? %>')"></div>
+      <div class="content-booking-card rounded-4 my-4">
+        <ul class="content-card ml-4">
+          <li><%= booking.eventspace.name %></li>
+          <li><%= booking.eventspace.address %></li>
+          <li><%= booking.starts_at.to_date %> - <%= booking.ends_at.to_date %></li>
+        </ul>
       </div>
     </div>
   <% end %>
 </div>
+
+
+ <%# <div class="card-container m-3">
+</div> %>
