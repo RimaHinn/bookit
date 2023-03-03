@@ -82,6 +82,7 @@ a {
 }
 
 .events-cards {
+  display: flex;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
@@ -90,4 +91,22 @@ a {
 
 .event-image {
   object-fit: cover;
+  border-radius: 20 ;
+}
+
+.show-imgs {
+  margin-left: 24px;
+  margin-right: 400px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+// 👇 cards for features in the "add a new eventspace" page 👇
+
+.feature {
+  padding: 30px;
+  background-color: #dad7fc;
+  border-radius: 5px;
+  margin: 10px;
 }

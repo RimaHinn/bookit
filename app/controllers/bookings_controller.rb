@@ -1,15 +1,19 @@
 class BookingsController < ApplicationController
+  # line below replaces: @eventspace = Eventspace.find(params[:eventspace_id])
+  before_action :set_event_space, only: :create
+
   def new
-    @booking = Booking.new
     @eventspace = Eventspace.find(params[:eventspace_id])
+    @booking = Booking.new
   end
 
-  def create # post request doesnt need view - it's just storing to the data base
+  # post request doesnt need view - it's just storing to the data base
+  def create
     # 1. create with a certain eventspace id ect
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    #eventspace_id can be picked up in URL or Form. URL gets it through params, picking up the instance of the current event space.
-    @eventspace = Eventspace.find(params[:eventspace_id])
+    # eventspace_id can be picked up in URL or Form. URL gets it through params, picking up the instance of the current event space.
+    # @eventspace = Eventspace.find(params[:eventspace_id])
     @booking.eventspace = @eventspace
     @booking.status = "pending"
 
@@ -31,10 +35,14 @@ class BookingsController < ApplicationController
 
   def select
     @user_bookings = Booking.where(user: current_user)
-
   end
 
   private
+
+  # added this method to set_event_space. It will be called at before_action
+  def set_event_space
+    @eventspace = Eventspace.find(params[:eventspace_id])
+  end
 
   def booking_params
     params.require(:booking).permit(:starts_at, :ends_at)

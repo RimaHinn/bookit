@@ -1,0 +1,15 @@
+.eventspace-img-grid {
+  background-size: cover;
+  background-position: center;
+}
+
+.img-grid-wrapper {
+  height: 400px;
+  width: 100%;
+}
+
+.img-grid-small {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
