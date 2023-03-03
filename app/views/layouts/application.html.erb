@@ -17,12 +17,17 @@
   </head>
 
   <body>
-    <div class="d-flex flex-column" style="height: 100vh">
+    <div class="d-flex flex-column" style="min-height: 100vh">
       <%# <--------------------------- NAVBAR ------------------------------------> %>
       <%= render "shared/navbar" %>
-        <%= yield %>
-
-
+      <!-- ------------------------- PAGE CONTENT ---------------------------------->
+      <% if controller_name == 'pages' && action_name == 'home' %>
+          <%= yield %>
+      <% else %>
+        <div class="flex-grow-1 my-5">
+          <%= yield %>
+        </div>
+      <% end %>
       <%# <--------------------------- FOOTER ------------------------------------> %>
      <%= render "shared/footer" %>
     </div>
