@@ -23,7 +23,6 @@ class BookingsController < ApplicationController
     end
   end
 
-
   # method to generate confirmation page
   def confirmation
     @booking = Booking.find(params[:id])

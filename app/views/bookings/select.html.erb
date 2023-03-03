@@ -1,9 +1,13 @@
 <%# This is the page you get when you open /my_bookings - Bookings#index %>
 
-<h1>all your bookings, <%= current_user.email%></h1>
-
+<h1 class="event-title">Trips</h1>
+<h3 class="event-subtitle">Where you’ve been</h3>
   <ul>
     <% @user_bookings.each do |booking| %>
       <li><%= booking.user.email %></li>
+      <li><%= booking.user.email %></li>
+      <li><%= booking.user.email %></li>
     <% end %>
   </ul>
+
+</div>
