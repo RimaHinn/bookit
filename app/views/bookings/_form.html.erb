@@ -1,6 +1,6 @@
 
-<%= simple_form_for [eventspace, booking] do |f| %>
+<%= simple_form_for [@eventspace, @booking] do |f| %>
   <%= f.input :starts_at %>
   <%= f.input :ends_at %>
- <button class="button_submit"><%= f.submit %></button>
+  <%= f.submit "Create my booking",:class =>"button" %>
 <% end %>
