@@ -1,0 +1,28 @@
+
+<div class="container">
+
+  <div> <h1><%= @eventspace.name %></h1>
+  <h4> €<%= @eventspace.price %></h4></div>
+  <p><%= @eventspace.description %></p>
+
+  <% if @eventspace.photos.size == 1 %>
+    <%= cl_image_tag @eventspace.photos.first.key, width: 200, crop: :fill, class: "event-image" %>
+  <% elsif @eventspace.photos.size > 1 %>
+    <div class="d-flex show-imgs mb-4">
+      <%= cl_image_tag @eventspace.photos.first.key, width: 400, crop: :fill, class: "event-image" %>
+      <div class="events-cards">
+        <% @eventspace.photos[1..-1].each do |photo| %>
+          <%= cl_image_tag photo.key, style: "width:100%; height:100%;", class: "event-image" %>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+  <% end %>
+
+<div class="form_book">
+  <%# Form to create a booking - uncomment to unleash! %>
+  <%= render "bookings/form", eventspace:@eventspace, booking:@booking %>
+</div>
+
+</div>
